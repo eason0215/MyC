@@ -1,0 +1,58 @@
+//iaib(simple)69
+#include <iostream>
+using namespace std;
+int main()
+{
+  int ans1 = 6, ans2 = 9, i=0, input1, input2;
+  for(i = 0; i < 10; i++)
+  {
+    cout << "請輸入2個不重複的數字(0~9)(中間要空格): ";
+    cin >> input1 >> input2;
+    if(input1 != input2 && ans1 == input1 && ans2 == input2)
+    {
+      cout << "\n2A0B\n正確，您共花了" << i <<"次";
+      break;
+    }
+    else if(input1 != input2 && ans1 == input1 && ans2 != input2)
+    {
+      cout << "\n" << i + 1 << ": " << "1A0B\n";
+    }
+    else if(input1 != input2 && ans1 != input1 && ans2 == input2)
+    {
+      cout << "\n" << i + 1 << ": " << "1A0B\n";
+    }
+    else if(input1 != input2 && input1 <= 9 && input1 >= 0 && input2 <= 9 && input2 >= 0)
+    {
+      if(ans1 == input2 && ans2 == input1)
+      { 
+        cout << "\n" << i + 1 << ": " << "0A2B\n";
+      }
+      else if(ans1 == input2 || ans2 == input1)
+      {
+        cout << "\n" << i + 1 << ": " << "0A1B\n";
+      }
+      else 
+      {
+        cout << "\n" << i + 1 << ": " << "0A0B\n";
+      }
+    }
+    else if(input1 == input2 || input1 > 9 || input1 < 0 || input2 > 9 || input2 < 0)
+    {
+      cout << "\n輸入錯誤!\n";
+    }
+    else
+    {
+      cout << "GAMEOVER";
+      break;
+    }
+  
+  }
+  if(i >= 9)
+  {
+    cout << "\nGAMEOVER";
+  }
+
+
+
+  return 0;
+}
