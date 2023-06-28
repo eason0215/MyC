@@ -1,9 +1,15 @@
 //iaib(simple)69
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 int main()
 {
-  int ans1 = 6, ans2 = 9, i=0, input1, input2;
+  int ans1, ans2, i=0, input1, input2;
+  //random
+  srand(time(NULL));
+  ans1 = rand()%10;
+  ans2 = (ans1 + 1 + rand()%8)%10;
   for(i = 0; i < 10; i++)
   {
     cout << "請輸入2個不重複的數字(0~9)(中間要空格): ";
@@ -52,6 +58,10 @@ int main()
     cout << "\nGAMEOVER";
   }
 
+
+
+  return 0;
+}
 
 
   return 0;
