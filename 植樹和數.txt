@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+  int n = 2, dNum = 0;
+  while(n != 0)
+  {
+    cin >> n;
+    if(n < 2)
+    {
+      continue;
+    }
+    dNum = 0;
+    for(int i = 1; i <= n; i++)
+    {
+      if(n % i == 0)
+      {
+        dNum++;
+      }
+
+    }
+    if(dNum > 2)
+    {
+      cout << "True\n";
+    }
+    else
+    {
+      cout << "False\n";
+    }
+  }
+  return 0;
+}
